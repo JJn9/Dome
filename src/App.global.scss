@@ -8,6 +8,7 @@
 $black: #000000;
 $white: #FFFFFF;
 $accent: #68b6ff;
+$accent-hover: #7ec1ff;
 
 body {
   font-family: 'Roboto',
@@ -27,6 +28,11 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 #root {
   display: flex;
   justify-content: center;
@@ -39,12 +45,10 @@ button {
 
 #main-title {
   text-align: center;
-  background: #61B5FF;
-  background: -webkit-linear-gradient(to right, #61B5FF 0%, #FFA1F6 100%);
-  background: -moz-linear-gradient(to right, #61B5FF 0%, #FFA1F6 100%);
-  background: linear-gradient(to right, #61B5FF 0%, #FFA1F6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
 }
 
 #title-bar {
@@ -53,6 +57,7 @@ button {
   height: 24px;
   background-color: #f1f1f1;
   margin: 0px;
+  z-index: 1;
 }
 
 #frame-title {
@@ -109,7 +114,40 @@ button:focus {
   outline: 0;
 }
 
+#sidenav {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 24px);
+  background-color: #2b2525;
+  width: 60px;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    height: 35px;
+    border-radius: 6px;
+    margin: auto;
+
+    svg {
+      width: 25px;
+      height: 25px;
+      color: #d3d3d3;
+    }
+
+    &:hover {
+      background-color: #3b3737;
+    }
+  }
+}
+
 .control-panel {
+  padding-top: 20px;
   width: 60%;
   display: flex;
   margin: auto;
@@ -130,11 +168,16 @@ button:focus {
     background: $accent;
     color: $white;
     font-size: 12px;
+    font-weight: bold;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     overflow: hidden;
     cursor: pointer;
     border: 0;
+
+    &:hover {
+      background: $accent-hover;
+    }
 
     svg {
       display: flex;

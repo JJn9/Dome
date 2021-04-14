@@ -23,7 +23,6 @@ class Frame extends Component {
   render() {
     return (
       <div id="title-bar">
-        <div id="frame-title">Dome</div>
         <div id="title-bar-btns">
           <button
             className="frame-btn"
